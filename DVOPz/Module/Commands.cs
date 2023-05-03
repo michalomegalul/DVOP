@@ -77,6 +77,7 @@ public class Commands : CommandsBase
             return;
         }
         Console.WriteLine(input);
+        string[] input 
         string[] inputArray = input.Split(',');
         int widthInput, heightInput;
         if (inputArray.Length == 2 && int.TryParse(inputArray[0], out widthInput) && int.TryParse(inputArray[1], out heightInput))
@@ -101,9 +102,12 @@ public class Commands : CommandsBase
         {
             count++;
             rectangle.CalculateArea();
-            Console.WriteLine(count);
+            Console.WriteLine($"Position: {count}");
             Console.WriteLine($"Width: {rectangle.Width}, Height: {rectangle.Height}, Area: {rectangle.Area}");
+            
         }
+        _rectangles.Clear();
+        
     }
     public void LOGOUT(string? email)
     {

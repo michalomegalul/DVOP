@@ -21,4 +21,12 @@ public class Rectangle
     {
         Area = Width * Height;
     }
+    public void CalculatePerimeter()
+    {
+        Area = 2 * (Width + Height);
+    }
+    public void Clean()
+    {
+        Rectangle.ReferenceEquals(this, null);
+    }
 }
