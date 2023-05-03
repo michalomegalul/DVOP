@@ -22,7 +22,6 @@ namespace DVOPz
         public void Application()
         {
             string comm;
-            string comm2;
             string promt;
             var commandDictionary = new Dictionary<string, Action<string>>
             {
@@ -49,17 +48,7 @@ namespace DVOPz
                         _inputValidation.Unauthenticated();
                         continue;
                     }
-                    promt = input.Split(' ')[1];
-                }
-                else if (comm == "ADD")
-                {
-                    if (input.Split(' ').Length < 3 || string.IsNullOrWhiteSpace(input.Split(' ')[2]))
-                    {
-                        _inputValidation.SynError();
-                        continue;
-                    }
-                    comm2= input.Split(' ')[1];
-                    promt = input.Split(' ')[2];
+                    promt = input.Substring(input.IndexOf(' ') + 1);
                 }
                 else
                 {
@@ -73,8 +62,6 @@ namespace DVOPz
                 {
                     _inputValidation.SynError();
                 }
-
-
             }
         }
     }
